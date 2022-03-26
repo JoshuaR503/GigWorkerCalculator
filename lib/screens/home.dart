@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
               /// Home
               SalomonBottomBarItem(
                 icon: const FaIcon(FontAwesomeIcons.chartPie),
-                title: const Text("Portafolio"),
+                title: const Text("Statistics"),
                 selectedColor: Colors.red
               ),
 
