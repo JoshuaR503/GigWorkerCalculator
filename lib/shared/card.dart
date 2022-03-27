@@ -43,7 +43,7 @@ class DecorativeCard extends StatelessWidget {
       child:  Container(
         padding: const EdgeInsets.all(14),
         decoration: const BoxDecoration(
-          color: Color(0xffff6262),
+          color: Color(0xffff3b3b),
           borderRadius: BorderRadius.all(Radius.circular(4))
         ),
         child: Column(

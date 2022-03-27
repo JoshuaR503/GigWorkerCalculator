@@ -1,4 +1,6 @@
 import 'package:calc/screens/dashboard/dashboard.dart';
+import 'package:calc/screens/earnings/earnings.dart';
+import 'package:calc/screens/expenses/expenses.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
 
@@ -18,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> tabs = [
     const FadeIn(duration: Duration(milliseconds: 700), child: Dashboard()),
-    const FadeIn(duration: Duration(milliseconds: 700), child: Dashboard()),
+    const FadeIn(duration: Duration(milliseconds: 700), child: Earnings()),
     const FadeIn(duration: Duration(milliseconds: 700), child: Dashboard()),
     const FadeIn(duration: Duration(milliseconds: 700), child: Dashboard()),
   ];
@@ -40,30 +42,36 @@ class _HomeScreenState extends State<HomeScreen> {
               SalomonBottomBarItem(
                 icon: const FaIcon(FontAwesomeIcons.user),
                 title: const Text("Home"),
-                selectedColor: Colors.red
+                selectedColor: Colors.red,
+                unselectedColor: Colors.grey.shade600
+              ),
+
+              /// Home
+              SalomonBottomBarItem(
+                icon: const FaIcon(FontAwesomeIcons.coins),
+                title: const Text("Earnings"),
+                selectedColor: Colors.red,
+                unselectedColor: Colors.grey.shade600
               ),
 
               /// Home
               SalomonBottomBarItem(
                 icon: const FaIcon(FontAwesomeIcons.chartPie),
                 title: const Text("Statistics"),
-                selectedColor: Colors.red
+                selectedColor: Colors.red,
+                unselectedColor: Colors.grey.shade600
               ),
 
               /// Home
               SalomonBottomBarItem(
                 icon: const FaIcon(FontAwesomeIcons.wallet),
                 title: const Text("Portafolio"),
-                selectedColor: Colors.red
+                selectedColor: Colors.red,
+                unselectedColor: Colors.grey.shade600
               ),
 
 
-              /// Home
-              SalomonBottomBarItem(
-                icon: const FaIcon(FontAwesomeIcons.solidSquarePlus),
-                title: const Text("Portafolio"),
-                selectedColor: Colors.red
-              ),
+              
             ],
           )
         )
