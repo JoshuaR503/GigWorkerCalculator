@@ -1,3 +1,4 @@
+import 'package:calc/shared/colors.dart';
 import 'package:flutter/material.dart';
 
 class DecorativeCard extends StatelessWidget {
@@ -43,7 +44,7 @@ class DecorativeCard extends StatelessWidget {
       child:  Container(
         padding: const EdgeInsets.all(14),
         decoration: const BoxDecoration(
-          color: Color(0xffff3b3b),
+          color: kCoralRed,
           borderRadius: BorderRadius.all(Radius.circular(4))
         ),
         child: Column(

@@ -1,4 +1,5 @@
 import 'package:calc/screens/dashboard/styles.dart';
+import 'package:calc/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -9,8 +10,7 @@ class ExpensesCard extends StatelessWidget {
 
   final Color color;
 
-  // ignore: prefer_const_constructors_in_immutables
-  ExpensesCard({Key? key, 
+  const ExpensesCard({Key? key, 
     required this.title,
     required this.description,
     required this.icon,
@@ -39,9 +39,9 @@ class ExpensesCard extends StatelessWidget {
               height: 48,
               width: 48,
               padding: const EdgeInsets.all(14),
-              child: FaIcon(icon, color: Color(0XFFffd7d7),),
+              child: FaIcon(icon, color: kLightCoralRed),
               decoration: const BoxDecoration(
-                color: Color(0xffff3b3b),
+                color: kCoralRed,
                 borderRadius: BorderRadius.all(Radius.circular(4))
               ),
             ),
