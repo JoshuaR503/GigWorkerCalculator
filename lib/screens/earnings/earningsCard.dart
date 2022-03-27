@@ -29,10 +29,8 @@ class EarningsCard extends StatelessWidget {
       fontWeight: FontWeight.w500,
     );
 
-   
-
     const TextStyle kValueStyle =  TextStyle(
-      fontSize: 24.0,
+      fontSize: 18.0,
       height: 1.5,
       letterSpacing: -1,
       color: Colors.white,
@@ -52,7 +50,7 @@ class EarningsCard extends StatelessWidget {
         if (actionEnabled) { action!(); }
       },
       child:  Container(
-        padding: const EdgeInsets.all(14),
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
         decoration: const BoxDecoration(
           color: kCoralRed,
           borderRadius: BorderRadius.all(Radius.circular(4))
@@ -79,7 +77,7 @@ class EarningsCard extends StatelessWidget {
                 // ignore: prefer_const_constructors
                 VerticalDivider(
                   color: Color(0xffb10000),
-                  thickness: 2,
+                  thickness: 1,
                 ),
 
                 Column(
@@ -87,13 +85,13 @@ class EarningsCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("\$4,018", style: kSecondaryValueStyle),
-                    Text("Gross", style: kTitleStyle),
+                    Text("Profit", style: kTitleStyle),
                   ],
                 ),
                 // ignore: prefer_const_constructors
                 VerticalDivider(
                   color: Color(0xffb10000),
-                  thickness: 2,
+                  thickness: 1,
                 ),
                 // ignore: prefer_const_constructors
 
@@ -109,14 +107,7 @@ class EarningsCard extends StatelessWidget {
               ],
             ),)
 
-            
-
- 
-
-            
-
-            
-
+          
             
           ],
         ),

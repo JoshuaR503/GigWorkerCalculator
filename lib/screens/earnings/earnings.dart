@@ -20,38 +20,21 @@ class Earnings extends StatelessWidget {
         children:  [
 
           const SizedBox(height: 24),
-          const Text('Weekly Earnings', style: screenTitle),
+          const Text('Earnings\nBreakdown', style: screenTitle),
           const SizedBox(height: 24),
 
 
-          _buildPortfolioSubtitle(title: 'Earnings History', action: () {}),
+          _buildDashboardTotalEarningsCard(title: "Revenue", value: 4320),
           const SizedBox(height: 14),
 
           const BarChartSample2(),
-          const SizedBox(height: 8),
+          const SizedBox(height: 14),
 
-          Divider(
-            color: Color(0XFFffd7d7),
-            thickness: 1,
-          ),
           
-          const SizedBox(height: 8),
 
-          _buildPortfolioSubtitle(title: 'Earnings Summary', action: () {}),
-          const SizedBox(height: 14),
 
-          _buildDashboardTotalEarningsCard(title: "Total Earnings", value: 4320),
 
-          const SizedBox(height: 14),
-
-          Divider(
-            color: Color(0XFFffd7d7),
-            thickness: 2,
-          ),
-
-          const SizedBox(height: 8),
-
-        
+  
           _buildPortfolioSubtitle(title: 'Add Earnings', action: () {}),
           const SizedBox(height: 14),
           
@@ -101,7 +84,7 @@ class Earnings extends StatelessWidget {
       children: [
         Expanded(child: Text(title,style: breakdownSectionTitle)),
         GestureDetector(
-          child: const Text('Ver todos', style: breakdownSectionTitleAction ),
+          child: const Text('Expand', style: breakdownSectionTitleAction ),
           onTap: () {},
         )
       ],
