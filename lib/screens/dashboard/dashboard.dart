@@ -69,15 +69,6 @@ class Dashboard extends StatelessWidget {
     );
   }
 
-  Widget _buildDashboardTotalEarningsCard() {
-    return DecorativeCard(
-      actionEnabled: false,
-      action: null,
-      title: "Total earnings this week",
-      value: "\$16,300",
-    );
-  }
-
   Widget _buildPortfolioSubtitle({required String  title, Function? action }) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,

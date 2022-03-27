@@ -37,6 +37,8 @@ dependencies:
   flutter_fadein: ^2.0.0
   font_awesome_flutter: ^10.1.0
   salomon_bottom_bar: ^3.3.0
+  intl: ^0.17.0
+  fl_chart: ^0.50.0
 
 dev_dependencies:
   flutter_test:

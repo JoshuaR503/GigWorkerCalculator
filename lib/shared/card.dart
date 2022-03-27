@@ -9,8 +9,7 @@ class DecorativeCard extends StatelessWidget {
   final bool actionEnabled;
   final Color color;
 
-  // ignore: prefer_const_constructors_in_immutables
-  DecorativeCard({Key? key, 
+  const DecorativeCard({Key? key, 
     required this.title,
     required this.value,
     required this.action,
@@ -55,13 +54,6 @@ class DecorativeCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(title, style: kTitleStyle),
-
-                // if (actionEnabled) FaIcon(
-                //   FontAwesomeIcons.angleRight,
-                //   color: Colors.grey.shade300,
-                //   size: 24,
-                // )
-
               ],
             ),
 

@@ -31,14 +31,15 @@ class ExpensesCard extends StatelessWidget {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           
           children: <Widget>[
 
             Container(
               height: 48,
               width: 48,
-              padding: const EdgeInsets.all(14),
+              padding: const EdgeInsets.all(8),
+              alignment: Alignment.center,
               child: FaIcon(icon, color: kLightCoralRed),
               decoration: const BoxDecoration(
                 color: kCoralRed,
