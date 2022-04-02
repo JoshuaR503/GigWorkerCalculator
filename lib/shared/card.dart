@@ -22,14 +22,14 @@ class DecorativeCard extends StatelessWidget {
 
     // ignore: prefer_const_constructors
     final TextStyle kTitleStyle = TextStyle(
-      fontSize: 16.5,
+      fontSize: 16,
       height: 1.5,
       color: Colors.white70,
       fontWeight: FontWeight.w500,
     );
 
     final TextStyle kValueStyle = TextStyle(
-      fontSize: 28.0,
+      fontSize: 22.0,
       height: 1.5,
       letterSpacing: -1,
       color: color,

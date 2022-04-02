@@ -8,13 +8,10 @@ class ExpensesCard extends StatelessWidget {
   final String description;
   final IconData icon;
 
-  final Color color;
-
   const ExpensesCard({Key? key, 
     required this.title,
     required this.description,
     required this.icon,
-    this.color = Colors.white,
   }) : super(key: key);
 
   @override
@@ -38,13 +35,6 @@ class ExpensesCard extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Container _buildCardAction() {
-    return Container(
-      padding: const EdgeInsets.only(right: 16),
-      child: const FaIcon(FontAwesomeIcons.chevronRight, color: Colors.black38, size: 16,),
     );
   }
 
@@ -76,6 +66,13 @@ class ExpensesCard extends StatelessWidget {
         color: kCoralRed,
         borderRadius: BorderRadius.all(Radius.circular(4))
       ),
+    );
+  }
+
+  Container _buildCardAction() {
+    return Container(
+      padding: const EdgeInsets.only(right: 16),
+      child: const FaIcon(FontAwesomeIcons.chevronRight, color: Colors.black38, size: 16,),
     );
   }
 }

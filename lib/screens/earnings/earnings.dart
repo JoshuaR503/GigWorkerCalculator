@@ -35,7 +35,7 @@ class _EarningsState extends State<Earnings> {
           _buildDashboardTotalEarningsCard(),
           const SizedBox(height: 24),
 
-          _buildPortfolioSubtitle(title: 'Earnings History', subtitle: 'See history', route: '/'),
+          _buildPortfolioSubtitle(title: 'Earnings History', subtitle: 'See breakdown', route: '/earningsHistory'),
           const SizedBox(height: 14),
 
 
@@ -52,10 +52,10 @@ class _EarningsState extends State<Earnings> {
           _buildDashboardAddExpensesCard(title: "Add weekly earnings", description: "Earnings this week", icon: FontAwesomeIcons.moneyBill1Wave),
           const SizedBox(height: 14),
 
-          _buildDashboardAddExpensesCard(title: "Add hours worked", description: "Amount of hours worked", icon: FontAwesomeIcons.car),
+          _buildDashboardAddExpensesCard(title: "Add hours worked", description: "Amount of hours worked", icon: FontAwesomeIcons.clock),
           const SizedBox(height: 14),
 
-          _buildDashboardAddExpensesCard(title: "Add miles driven", description: "Amount of hours worked", icon: FontAwesomeIcons.road),
+          _buildDashboardAddExpensesCard(title: "Add miles driven", description: "Amount of hours worked", icon: FontAwesomeIcons.car),
           const SizedBox(height: 28),
 
 

@@ -16,18 +16,13 @@ Widget buildExpensesCard() {
       children: [
         
         _buildItemCardTitle(),
-        const SizedBox(height: 8),
-        const Divider(
-          color: Color(0xffdee1f5),
-          thickness: 1.5,
-        ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 24),
         _buildItemCardBody(title: "Gas Station", description: "\$6.54 per gallon", cost: 6.45, icon: FontAwesomeIcons.droplet),
-        const SizedBox(height: 18),
+        const SizedBox(height: 24),
         _buildItemCardBody(title: "Gas Station", description: "\$6.54 per gallon", cost: 6.45, icon: FontAwesomeIcons.droplet),
-        const SizedBox(height: 18),
+        const SizedBox(height: 24),
         _buildItemCardBody(title: "Gas Station", description: "\$6.54 per gallon", cost: 6.45, icon: FontAwesomeIcons.droplet),
-        const SizedBox(height: 18),
+        const SizedBox(height: 24),
         _buildItemCardBody(title: "Car maintenance", description: "Oil change", cost: 6.45, icon: FontAwesomeIcons.wrench),
       ],
     ),
@@ -38,9 +33,9 @@ Widget buildExpensesCard() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        Text("Tuesday, 14", style: breakdownCardTitleStyle),
-        Text("-\$32", style: breakdownCardTitleStyle)
+      children: [
+        Text("Tuesday, 14", style: breakdownCardTitleStyle.copyWith(fontWeight: FontWeight.w600)),
+        const Text("-\$32", style: breakdownCardTitleStyle)
       ],
     );
   }

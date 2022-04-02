@@ -10,7 +10,8 @@ const kBoxDecorationStyle = BoxDecoration(
 );
 
 class ExpensesBreakdown extends StatelessWidget {
-  const ExpensesBreakdown({ Key? key }) : super(key: key);
+  
+  const ExpensesBreakdown({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,7 @@ class ExpensesBreakdown extends StatelessWidget {
                       actionEnabled: false,
                       action: null,
                       title: "March 28 - April 3",
-                      value: "\$6,300",
+                      value: "Total Expenses: \$6,300",
                     ),
                         
                     const SizedBox(height: 24),
