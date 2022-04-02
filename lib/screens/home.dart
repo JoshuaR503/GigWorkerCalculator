@@ -23,7 +23,9 @@ class _HomeScreenState extends State<HomeScreen> {
     // const FadeIn(duration: Duration(milliseconds: 700), child: Dashboard()),
     const FadeIn(duration: Duration(milliseconds: 700), child: Earnings()),
     const FadeIn(duration: Duration(milliseconds: 700), child: Statistics()),
-    const FadeIn(duration: Duration(milliseconds: 700), child: Dashboard()),
+        FadeIn(duration: Duration(milliseconds: 700), child: Container()),
+
+    FadeIn(duration: Duration(milliseconds: 700), child: Container()),
   ];
 
   @override
@@ -59,6 +61,13 @@ class _HomeScreenState extends State<HomeScreen> {
               SalomonBottomBarItem(
                 icon: const FaIcon(FontAwesomeIcons.chartPie),
                 title: const Text("Statistics"),
+                selectedColor: Colors.red,
+                unselectedColor: Colors.grey.shade600
+              ),
+
+              SalomonBottomBarItem(
+                icon: const FaIcon(FontAwesomeIcons.gear),
+                title: const Text("Settings"),
                 selectedColor: Colors.red,
                 unselectedColor: Colors.grey.shade600
               ),

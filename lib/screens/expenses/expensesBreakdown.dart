@@ -24,7 +24,7 @@ class ExpensesBreakdown extends StatelessWidget {
       ),
       body: SafeArea(
         child: Container(
-          color: const Color(0xfff2f1f6),
+          color: const Color(0xffe9ebf3),
           child: SizedBox(
             height: double.infinity,
             width: double.infinity,
@@ -36,7 +36,7 @@ class ExpensesBreakdown extends StatelessWidget {
                 child: Column(
                   children: [
 
-                     DecorativeCard(
+                    const DecorativeCard(
                       actionEnabled: false,
                       action: null,
                       title: "March 28 - April 3",
@@ -44,7 +44,6 @@ class ExpensesBreakdown extends StatelessWidget {
                     ),
                         
                     const SizedBox(height: 24),
-
   
                     buildExpensesCard(),
                     const SizedBox(height: 14),
@@ -58,7 +57,4 @@ class ExpensesBreakdown extends StatelessWidget {
       ),
     );
   }
-
-
-
 }
