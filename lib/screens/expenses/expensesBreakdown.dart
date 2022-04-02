@@ -1,5 +1,4 @@
 import 'package:calc/screens/dashboard/helpers.dart';
-import 'package:calc/screens/dashboard/styles.dart';
 import 'package:calc/shared/card.dart';
 import 'package:calc/shared/colors.dart';
 import 'package:flutter/material.dart';
@@ -22,12 +21,12 @@ class ExpensesBreakdown extends StatelessWidget {
         bottomOpacity: 0.0, 
         elevation: 0.0
       ),
-      body: SafeArea(
+      body: SizedBox(
+        height: double.infinity,
+        width: double.infinity,
         child: Container(
           color: const Color(0xffe9ebf3),
-          child: SizedBox(
-            height: double.infinity,
-            width: double.infinity,
+          child: SafeArea(
             child: SingleChildScrollView(
               physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
@@ -53,7 +52,7 @@ class ExpensesBreakdown extends StatelessWidget {
               )
             ),
           ),
-        )
+        ),
       ),
     );
   }

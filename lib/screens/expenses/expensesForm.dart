@@ -51,7 +51,7 @@ class ExpensesForm extends StatelessWidget {
             _buildFormField(title: "Expense Description", label: "Add a brief description"),
           ],
         ),
-        const SizedBox(height: 48),
+        const SizedBox(height: 24),
         _buildLoginBtn()
       ],
     );
@@ -87,7 +87,7 @@ class ExpensesForm extends StatelessWidget {
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           child: TextField(style: kHintTextStyle, decoration: kFormDecoration),
-          height: 60.0,
+          height: 54.0,
         )
       ],
     );
@@ -96,7 +96,7 @@ class ExpensesForm extends StatelessWidget {
   Widget _buildLoginBtn() {
     return Container(
       decoration: kBoxDecorationStyle,
-      height: 56,
+      height: 54,
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -111,6 +111,4 @@ class ExpensesForm extends StatelessWidget {
       ),
     );
   }
-
-
 }

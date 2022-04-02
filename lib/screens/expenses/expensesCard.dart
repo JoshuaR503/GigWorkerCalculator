@@ -19,7 +19,6 @@ class ExpensesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle breakdownDescriptionStyle = breakdownTitleStyle.copyWith(color: Colors.black54);
 
     return GestureDetector(
       onTap: () => Navigator.pushNamed(context, '/expensesForm'),
@@ -32,42 +31,50 @@ class ExpensesCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
-          
           children: <Widget>[
-
-
-            Container(
-              height: 48,
-              width: 48,
-              padding: const EdgeInsets.all(8),
-              alignment: Alignment.center,
-              child: FaIcon(icon, color: kLightCoralRed),
-              decoration: const BoxDecoration(
-                color: kCoralRed,
-                borderRadius: BorderRadius.all(Radius.circular(4))
-              ),
-            ),
-                
-            const SizedBox(width: 16,),
-            
-            Expanded(child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(title, style: breakdownTitleStyle),
-                Text(description, style: breakdownDescriptionStyle),
-              ],
-            )),
-
-            Container(
-              padding: EdgeInsets.only(right: 16),
-              child: FaIcon(FontAwesomeIcons.chevronRight, color: Colors.black38, size: 16,),
-            )
-
-
-            
+            _buildCardIcon(),
+            _buildCardInfo(),
+            _buildCardAction()
           ],
         ),
+      ),
+    );
+  }
+
+  Container _buildCardAction() {
+    return Container(
+      padding: const EdgeInsets.only(right: 16),
+      child: const FaIcon(FontAwesomeIcons.chevronRight, color: Colors.black38, size: 16,),
+    );
+  }
+
+  Expanded _buildCardInfo() {
+    final TextStyle breakdownDescriptionStyle = breakdownTitleStyle.copyWith(color: Colors.black54);
+
+    return Expanded(child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(title, style: breakdownTitleStyle),
+        Text(description, style: breakdownDescriptionStyle),
+      ],
+    ));
+  }
+
+  Container _buildCardIcon() {
+    return Container(
+      height: 48,
+      width: 48,
+
+      child: FaIcon(icon, color: kLightCoralRed),
+      alignment: Alignment.center,
+
+      padding: const EdgeInsets.all(8),
+      margin: const EdgeInsets.only(right: 16),
+
+      decoration: const BoxDecoration(
+        color: kCoralRed,
+        borderRadius: BorderRadius.all(Radius.circular(4))
       ),
     );
   }
