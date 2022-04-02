@@ -29,7 +29,7 @@ class DecorativeCard extends StatelessWidget {
     );
 
     final TextStyle kValueStyle = TextStyle(
-      fontSize: 32.0,
+      fontSize: 28.0,
       height: 1.5,
       letterSpacing: -1,
       color: color,

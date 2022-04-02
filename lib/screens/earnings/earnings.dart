@@ -10,11 +10,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
-import 'earningsStatsCard.dart';
-
-class Earnings extends StatelessWidget {
+class Earnings extends StatefulWidget {
   const Earnings({ Key? key }) : super(key: key);
 
+  @override
+  State<Earnings> createState() => _EarningsState();
+}
+
+class _EarningsState extends State<Earnings> {
   @override
   Widget build(BuildContext context) {
     return ScreenScaffold(
@@ -24,26 +27,25 @@ class Earnings extends StatelessWidget {
 
           const SizedBox(height: 24),
           const Text('Earnings\nSummary', style: screenTitle),
-                    const SizedBox(height: 14),
+          const SizedBox(height: 8),
 
           Text('March 28 - April 3', style: screenTitle.copyWith(
             fontSize: 20,
             color: Colors.black45,
-            letterSpacing: 0
           )),
 
           const SizedBox(height: 24),
 
           _buildDashboardTotalEarningsCard(),
-          const SizedBox(height: 24),
+          const SizedBox(height: 28),
 
-          _buildPortfolioSubtitle(title: 'Earnings History', action: () {}),
+          _buildPortfolioSubtitle(title: 'Earnings History', route: '/'),
           const SizedBox(height: 14),
 
 
           Column(
 
-            children: [
+            children: const [
               EarningsHistoryCard(),
               EarningsHistoryCard()
             ],
@@ -54,8 +56,8 @@ class Earnings extends StatelessWidget {
           
           const SizedBox(height: 14),
 
-          _buildPortfolioSubtitle(title: 'Add Earnings', action: () {}),
-          const SizedBox(height: 14),
+          // _buildPortfolioSubtitle(title: 'Add Earnings', route: '/'),
+          // const SizedBox(height: 14),
           
           _buildDashboardAddExpensesCard(title: "Add weekly earnings", description: "Earnings this week", icon: FontAwesomeIcons.moneyBill1Wave),
           const SizedBox(height: 14),
@@ -64,10 +66,10 @@ class Earnings extends StatelessWidget {
           const SizedBox(height: 14),
 
           _buildDashboardAddExpensesCard(title: "Add miles driven", description: "Amount of hours worked", icon: FontAwesomeIcons.road),
-          const SizedBox(height: 14),
+          const SizedBox(height: 28),
 
 
-          _buildPortfolioSubtitle(title: 'Add Expenses', action: () {}),
+          _buildPortfolioSubtitle(title: 'Add expenses', route: '/expensesBreakdown'),
           const SizedBox(height: 14),
 
           _buildDashboardAddExpensesCard(title: "Add gas expense", description: "Add cost of gas", icon: FontAwesomeIcons.droplet),
@@ -105,21 +107,19 @@ class Earnings extends StatelessWidget {
     );
   }
 
-  Widget _buildPortfolioSubtitle({required String  title, Function? action }) {
+  Widget _buildPortfolioSubtitle({required String  title, required String route }) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Expanded(child: Text(title,style: breakdownSectionTitle)),
         GestureDetector(
-          child: const Text('Expand', style: breakdownSectionTitleAction ),
-          onTap: () {},
+          child: const Text('breakdown', style: breakdownSectionTitleAction ),
+          onTap: () {
+            Navigator.pushNamed(context, route);
+          },
         )
       ],
     );
   }
-
-
-
-
 }

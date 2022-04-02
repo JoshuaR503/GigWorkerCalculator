@@ -30,10 +30,11 @@ class ExpensesCard extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(4))
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
           
           children: <Widget>[
+
 
             Container(
               height: 48,
@@ -48,14 +49,23 @@ class ExpensesCard extends StatelessWidget {
             ),
                 
             const SizedBox(width: 16,),
-            Column(
+            
+            Expanded(child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(title, style: breakdownTitleStyle),
                 Text(description, style: breakdownDescriptionStyle),
               ],
-            ),
+            )),
+
+            Container(
+              padding: EdgeInsets.only(right: 16),
+              child: FaIcon(FontAwesomeIcons.chevronRight, color: Colors.black38, size: 16,),
+            )
+
+
+            
           ],
         ),
       ),

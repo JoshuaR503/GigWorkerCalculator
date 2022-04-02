@@ -1,4 +1,5 @@
 import 'package:calc/screens/dashboard/styles.dart';
+import 'package:calc/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -59,7 +60,7 @@ Widget buildExpensesCard() {
       padding: const EdgeInsets.all(14),
       child: FaIcon(icon, color: const Color(0XFFffd7d7),),
       decoration: const BoxDecoration(
-        color: Color(0xffff6262),
+        color: kCoralRed,
         borderRadius: BorderRadius.all(Radius.circular(4))
       ),
     );

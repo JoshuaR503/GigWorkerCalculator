@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> tabs = [
-    const FadeIn(duration: Duration(milliseconds: 700), child: Dashboard()),
+    // const FadeIn(duration: Duration(milliseconds: 700), child: Dashboard()),
     const FadeIn(duration: Duration(milliseconds: 700), child: Earnings()),
     const FadeIn(duration: Duration(milliseconds: 700), child: Statistics()),
     const FadeIn(duration: Duration(milliseconds: 700), child: Dashboard()),
@@ -40,17 +40,17 @@ class _HomeScreenState extends State<HomeScreen> {
             onTap: (i) => setState(() => _selectedIndex = i),
             items: [
               /// Home
-              SalomonBottomBarItem(
-                icon: const FaIcon(FontAwesomeIcons.user),
-                title: const Text("Home"),
-                selectedColor: Colors.red,
-                unselectedColor: Colors.grey.shade600
-              ),
+              // SalomonBottomBarItem(
+              //   icon: const FaIcon(FontAwesomeIcons.user),
+              //   title: const Text("Home"),
+              //   selectedColor: Colors.red,
+              //   unselectedColor: Colors.grey.shade600
+              // ),
 
               /// Home
               SalomonBottomBarItem(
-                icon: const FaIcon(FontAwesomeIcons.coins),
-                title: const Text("Earnings"),
+                icon: const FaIcon(FontAwesomeIcons.user),
+                title: const Text("Home"),
                 selectedColor: Colors.red,
                 unselectedColor: Colors.grey.shade600
               ),
