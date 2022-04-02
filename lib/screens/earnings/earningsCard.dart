@@ -3,21 +3,21 @@
 import 'package:calc/shared/colors.dart';
 import 'package:flutter/material.dart';
 
-class EarningsCard extends StatelessWidget {
+class EarningsActionCard extends StatelessWidget {
 
-  final String title;
-  final String value;
-  final Function? action;
-  final bool actionEnabled;
-  final Color color;
+  // final String title;
+  // final String value;
+  // final Function? action;
+  // final bool actionEnabled;
+  // final Color color;
 
-  const EarningsCard({Key? key, 
-    required this.title,
-    required this.value,
-    required this.action,
-    required this.actionEnabled,
-    this.color = Colors.white,
-  }) : super(key: key);
+  // const EarningsActionCard({Key? key, 
+  //   required this.title,
+  //   required this.value,
+  //   required this.action,
+  //   required this.actionEnabled,
+  //   this.color = Colors.white,
+  // }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,9 +46,7 @@ class EarningsCard extends StatelessWidget {
     );
 
     return GestureDetector(
-      onTap: () {
-        if (actionEnabled) { action!(); }
-      },
+      onTap: () {},
       child:  Container(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
         decoration: const BoxDecoration(
@@ -59,50 +57,55 @@ class EarningsCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-
             IntrinsicHeight(
               child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
+                
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(value, style: kValueStyle),
-                    Text(title, style: kTitleStyle),
+                    Text("Revenue", style: kTitleStyle),
+                    Text("\$4,018", style: kValueStyle),
                   ],
                 ),
 
-                // ignore: prefer_const_constructors
-                VerticalDivider(
+                 VerticalDivider(
                   color: Color(0xffb10000),
                   thickness: 1,
                 ),
+                // ignore: prefer_const_constructors
 
                 Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("\$4,018", style: kSecondaryValueStyle),
                     Text("Profit", style: kTitleStyle),
+                    Text("\$3,823", style: kSecondaryValueStyle),
                   ],
                 ),
+
                 // ignore: prefer_const_constructors
                 VerticalDivider(
                   color: Color(0xffb10000),
                   thickness: 1,
                 ),
-                // ignore: prefer_const_constructors
 
                 Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("\$40", style: kSecondaryValueStyle),
-                    Text("Hourly ", style: kTitleStyle),
+                    Text("Expenses", style: kTitleStyle),
+                    Text("\$240", style: kSecondaryValueStyle),
                   ],
                 ),
+
+                
+                // ignore: prefer_const_constructors
+               
 
               ],
             ),)

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const TextStyle screenTitle = TextStyle(
   fontSize: 34.0,
-  height: 1.5,
+  height: 1.25,
   letterSpacing: -1,
   color: Colors.black,
   fontWeight: FontWeight.bold,

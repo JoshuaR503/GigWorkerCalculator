@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 const TextStyle breakdownSectionTitle = TextStyle(
   fontSize: 18.0,
   height: 1.5,
-  color: Colors.black,
+  color: Colors.black87,
   fontWeight: FontWeight.w500,
 );
 
