@@ -1,6 +1,7 @@
 import 'package:calc/screens/dashboard/dashboard.dart';
 import 'package:calc/screens/earnings/earnings.dart';
 import 'package:calc/screens/expenses/expensesForm.dart';
+import 'package:calc/screens/stats/stats.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
 
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> tabs = [
     const FadeIn(duration: Duration(milliseconds: 700), child: Earnings()),
-    FadeIn(duration: const Duration(milliseconds: 700), child: Container()),
+    FadeIn(duration: const Duration(milliseconds: 700), child: EarningsStats()),
     FadeIn(duration: const Duration(milliseconds: 700), child: Container()),
     FadeIn(duration: const Duration(milliseconds: 700), child: Container()),
   ];

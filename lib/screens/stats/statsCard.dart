@@ -1,20 +1,14 @@
 import 'package:calc/shared/colors.dart';
 import 'package:flutter/material.dart';
 
-class DecorativeCard extends StatelessWidget {
+class StatsCard extends StatelessWidget {
 
   final String title;
   final String value;
-  final Function? action;
-  final bool actionEnabled;
-  final Color color;
 
-  const DecorativeCard({Key? key, 
+  const StatsCard({Key? key, 
     required this.title,
     required this.value,
-    required this.action,
-    required this.actionEnabled,
-    this.color = Colors.white,
   }) : super(key: key);
 
   @override
@@ -32,14 +26,11 @@ class DecorativeCard extends StatelessWidget {
       fontSize: 20.0,
       height: 1.5,
       letterSpacing: 0.25,
-      color: color,
+      color: Colors.white,
       fontWeight: FontWeight.bold,
     );
 
     return GestureDetector(
-      onTap: () {
-        if (actionEnabled) { action!(); }
-      },
       child:  Container(
         padding: const EdgeInsets.all(14),
         decoration: const BoxDecoration(
@@ -50,12 +41,11 @@ class DecorativeCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Row(
+
+            title.isNotEmpty ? Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(title, style: kTitleStyle),
-              ],
-            ),
+              children: [Text(title, style: kTitleStyle)],
+            ) : Container(),
 
             Text(value, style: kValueStyle),
           ],
