@@ -24,41 +24,31 @@ class _EarningsState extends State<Earnings> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children:  [
-
           const SizedBox(height: 24),
-          const Text('Earnings\nSummary', style: screenTitle),
-          const SizedBox(height: 8),
+          _buildScreenTitle(),
 
-          Text('March 28 - April 3', style: screenTitle.copyWith(
-            fontSize: 20,
-            color: Colors.black45,
-          )),
+          const SizedBox(height: 8),
+          _buildScreenSubtitle(),
 
           const SizedBox(height: 24),
 
           _buildDashboardTotalEarningsCard(),
-          const SizedBox(height: 28),
+          const SizedBox(height: 24),
 
-          _buildPortfolioSubtitle(title: 'Earnings History', route: '/'),
+          _buildPortfolioSubtitle(title: 'Earnings History', subtitle: 'See history', route: '/'),
           const SizedBox(height: 14),
 
 
           Column(
-
             children: const [
-              EarningsHistoryCard(),
-              EarningsHistoryCard()
+              EarningsHistoryCard(dateRange: "Mar 21 -  Mar 27", totalAmount: "\$230.25",),
+              EarningsHistoryCard(dateRange: "Mar 14 - Mar 20", totalAmount: "\$575.13",)
             ],
           ),
+          const SizedBox(height: 14),
 
           // const BarChartSample2(),
 
-          
-          const SizedBox(height: 14),
-
-          // _buildPortfolioSubtitle(title: 'Add Earnings', route: '/'),
-          // const SizedBox(height: 14),
-          
           _buildDashboardAddExpensesCard(title: "Add weekly earnings", description: "Earnings this week", icon: FontAwesomeIcons.moneyBill1Wave),
           const SizedBox(height: 14),
 
@@ -69,7 +59,7 @@ class _EarningsState extends State<Earnings> {
           const SizedBox(height: 28),
 
 
-          _buildPortfolioSubtitle(title: 'Add expenses', route: '/expensesBreakdown'),
+          _buildPortfolioSubtitle(title: 'Add expenses', subtitle: 'See breakdown', route: '/expensesBreakdown'),
           const SizedBox(height: 14),
 
           _buildDashboardAddExpensesCard(title: "Add gas expense", description: "Add cost of gas", icon: FontAwesomeIcons.droplet),
@@ -80,18 +70,21 @@ class _EarningsState extends State<Earnings> {
 
           _buildDashboardAddExpensesCard(title: "Add maintenance expense", description: "Add cost of maintenance", icon: FontAwesomeIcons.wrench),
           const SizedBox(height: 14),
-
-
-          
-          
-
         ],
       ),
     );
   }
 
+  Text _buildScreenTitle() => const Text('Earnings\nSummary', style: screenTitle);
+
+  Text _buildScreenSubtitle() {
+    return Text('March 28 - April 3', style: screenTitle.copyWith(
+      fontSize: 20,
+      color: Colors.black45,
+    ));
+  }
+
   Widget _buildDashboardTotalEarningsCard() {
-    // ignore: prefer_const_constructors
     return EarningsActionCard();
   }
 
@@ -107,17 +100,19 @@ class _EarningsState extends State<Earnings> {
     );
   }
 
-  Widget _buildPortfolioSubtitle({required String  title, required String route }) {
+  Widget _buildPortfolioSubtitle({
+    required String title, 
+    required String subtitle, 
+    required String route
+  }) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Expanded(child: Text(title,style: breakdownSectionTitle)),
         GestureDetector(
-          child: const Text('breakdown', style: breakdownSectionTitleAction ),
-          onTap: () {
-            Navigator.pushNamed(context, route);
-          },
+          child: Text(subtitle, style: breakdownSectionTitleAction ),
+          onTap: () => Navigator.pushNamed(context, route)
         )
       ],
     );

@@ -1,7 +1,6 @@
 import 'package:calc/screens/dashboard/dashboard.dart';
 import 'package:calc/screens/earnings/earnings.dart';
-import 'package:calc/screens/expenses/expenses.dart';
-import 'package:calc/screens/stats/stats.dart';
+import 'package:calc/screens/expenses/expensesForm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
 
@@ -20,12 +19,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> tabs = [
-    // const FadeIn(duration: Duration(milliseconds: 700), child: Dashboard()),
     const FadeIn(duration: Duration(milliseconds: 700), child: Earnings()),
-    const FadeIn(duration: Duration(milliseconds: 700), child: Statistics()),
-        FadeIn(duration: Duration(milliseconds: 700), child: Container()),
-
-    FadeIn(duration: Duration(milliseconds: 700), child: Container()),
+    FadeIn(duration: const Duration(milliseconds: 700), child: Container()),
+    FadeIn(duration: const Duration(milliseconds: 700), child: Container()),
+    FadeIn(duration: const Duration(milliseconds: 700), child: Container()),
   ];
 
   @override
@@ -41,15 +38,6 @@ class _HomeScreenState extends State<HomeScreen> {
             currentIndex: _selectedIndex,
             onTap: (i) => setState(() => _selectedIndex = i),
             items: [
-              /// Home
-              // SalomonBottomBarItem(
-              //   icon: const FaIcon(FontAwesomeIcons.user),
-              //   title: const Text("Home"),
-              //   selectedColor: Colors.red,
-              //   unselectedColor: Colors.grey.shade600
-              // ),
-
-              /// Home
               SalomonBottomBarItem(
                 icon: const FaIcon(FontAwesomeIcons.user),
                 title: const Text("Home"),
@@ -57,7 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 unselectedColor: Colors.grey.shade600
               ),
 
-              /// Home
               SalomonBottomBarItem(
                 icon: const FaIcon(FontAwesomeIcons.chartPie),
                 title: const Text("Statistics"),
@@ -72,16 +59,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 unselectedColor: Colors.grey.shade600
               ),
 
-              /// Home
               SalomonBottomBarItem(
                 icon: const FaIcon(FontAwesomeIcons.wallet),
                 title: const Text("Portafolio"),
                 selectedColor: Colors.red,
                 unselectedColor: Colors.grey.shade600
               ),
-
-
-              
             ],
           )
         )

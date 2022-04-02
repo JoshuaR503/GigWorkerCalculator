@@ -8,8 +8,8 @@ const kBoxDecorationStyle = BoxDecoration(
   borderRadius: BorderRadius.all(Radius.circular(4)),
 );
 
-class Expenses extends StatelessWidget {
-  const Expenses({ Key? key }) : super(key: key);
+class ExpensesForm extends StatelessWidget {
+  const ExpensesForm({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

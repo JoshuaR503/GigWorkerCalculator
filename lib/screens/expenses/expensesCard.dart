@@ -22,7 +22,7 @@ class ExpensesCard extends StatelessWidget {
     final TextStyle breakdownDescriptionStyle = breakdownTitleStyle.copyWith(color: Colors.black54);
 
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, '/expenses'),
+      onTap: () => Navigator.pushNamed(context, '/expensesForm'),
       child:  Container(
         padding: const EdgeInsets.all(14),
         decoration: const BoxDecoration(

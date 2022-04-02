@@ -21,7 +21,7 @@ class Dashboard extends StatelessWidget {
           const Text('Dashboard', style: screenTitle),
           const SizedBox(height: 24),
 
-          _buildDashboardTotalExpensesCard(),
+          // _buildDashboardTotalExpensesCard(),
           const SizedBox(height: 14),
 
           _buildPortfolioSubtitle(title: 'Add Expenses', action: () {}),
@@ -60,14 +60,14 @@ class Dashboard extends StatelessWidget {
     );
   }
 
-  Widget _buildDashboardTotalExpensesCard() {
-    return DecorativeCard(
-      actionEnabled: false,
-      action: null,
-      title: "Total expenses this week",
-      value: "\$6,300",
-    );
-  }
+  // Widget _buildDashboardTotalExpensesCard() {
+  //   return DecorativeCard(
+  //     actionEnabled: false,
+  //     action: null,
+  //     title: "Total expenses this week",
+  //     value: "\$6,300",
+  //   );
+  // }
 
   Widget _buildPortfolioSubtitle({required String  title, Function? action }) {
     return Row(
