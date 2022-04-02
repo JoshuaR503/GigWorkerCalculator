@@ -1,6 +1,7 @@
 
+import 'package:calc/models/financeSummary.model.dart';
 import 'package:calc/screens/dashboard/styles.dart';
-import 'package:calc/screens/earnings/earningsCard.dart';
+import 'package:calc/shared/financesSummaryCard.dart';
 import 'package:calc/screens/earnings/earningsChart.dart';
 import 'package:calc/screens/earnings/earningsHistoryCard.dart';
 import 'package:calc/screens/expenses/expensesCard.dart';
@@ -85,7 +86,11 @@ class _EarningsState extends State<Earnings> {
   }
 
   Widget _buildDashboardTotalEarningsCard() {
-    return EarningsActionCard();
+    return FinancesSummaryCard(dataPoints: [
+      FinanceSummary(label: "Revenue", value: 4018),
+      FinanceSummary(label: "Profit", value: 3823),
+      FinanceSummary(label: "Expenses", value: 240, last: true),
+    ]);
   }
 
   Widget _buildDashboardAddExpensesCard({

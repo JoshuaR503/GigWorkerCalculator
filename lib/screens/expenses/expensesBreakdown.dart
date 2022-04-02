@@ -1,6 +1,8 @@
+import 'package:calc/models/financeSummary.model.dart';
 import 'package:calc/screens/dashboard/helpers.dart';
 import 'package:calc/shared/card.dart';
 import 'package:calc/shared/colors.dart';
+import 'package:calc/shared/financesSummaryCard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
 
@@ -43,8 +45,15 @@ class ExpensesBreakdown extends StatelessWidget {
                       value: "Total Expenses: \$6,300",
                     ),
                         
-                    const SizedBox(height: 24),
-  
+                    const SizedBox(height: 14),
+
+                    FinancesSummaryCard(dataPoints: [
+                      FinanceSummary(label: "Gas", value: 4018),
+                      FinanceSummary(label: "Custom", value: 3823),
+                      FinanceSummary(label: "Maintenance", value: 240, last: true),
+                    ]),
+                    const SizedBox(height: 14),
+
                     buildExpensesCard(),
                     const SizedBox(height: 14),
                     buildExpensesCard(),
