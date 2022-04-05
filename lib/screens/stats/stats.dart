@@ -75,41 +75,5 @@ class _EarningsStatsState extends State<EarningsStats> {
     ));
   }
 
-  Widget _buildDashboardTotalEarningsCard() {
-    return FinancesSummaryCard(dataPoints: [
-      FinanceSummary(label: "Revenue", value: 4018),
-      FinanceSummary(label: "Profit", value: 3823),
-      FinanceSummary(label: "Expenses", value: 240, last: true),
-    ]);
-  }
 
-  Widget _buildDashboardAddExpensesCard({
-    required String title,
-    required String description, 
-    required IconData icon
-  }) {
-    return ExpensesCard(
-      title: title,
-      description: description,
-      icon: icon
-    );
-  }
-
-  Widget _buildPortfolioSubtitle({
-    required String title, 
-    required String subtitle, 
-    required String route
-  }) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Expanded(child: Text(title,style: breakdownSectionTitle)),
-        GestureDetector(
-          child: Text(subtitle, style: breakdownSectionTitleAction ),
-          onTap: () => Navigator.pushNamed(context, route)
-        )
-      ],
-    );
-  }
 }

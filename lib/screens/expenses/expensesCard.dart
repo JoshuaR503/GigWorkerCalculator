@@ -1,4 +1,6 @@
+import 'package:calc/models/financeType.dart';
 import 'package:calc/screens/dashboard/styles.dart';
+import 'package:calc/screens/expenses/expensesForm.dart';
 import 'package:calc/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,18 +9,26 @@ class ExpensesCard extends StatelessWidget {
   final String title;
   final String description;
   final IconData icon;
+  final FinanceType financeType;
 
   const ExpensesCard({Key? key, 
     required this.title,
     required this.description,
     required this.icon,
+    required this.financeType
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, '/expensesForm'),
+      // onTap: () => Navigator.pushNamed(context, '/expensesForm', arguments: financeType),
+      
+      onTap: () {
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (context) => ExpensesForm(financeType: financeType)),
+        );
+      },
       child:  Container(
         padding: const EdgeInsets.all(14),
         decoration: const BoxDecoration(

@@ -17,13 +17,6 @@ class ExpensesFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    const kHintTextStyle = TextStyle( 
-      fontFamily: 'OpenSans',
-      fontWeight: FontWeight.w400, 
-      color: Colors.black45
-    );
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -31,23 +24,33 @@ class ExpensesFormField extends StatelessWidget {
         Text(title, style: breakdownSectionTitle),
 
         const SizedBox(height: 16),
-
         Container(
           alignment: Alignment.centerLeft,
           decoration: kRoundedBoxDecoration,
           height: 54.0,
-          child: TextField(
-            controller: controller,
-            style: kHintTextStyle, 
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsets.only(left: 14.0),
-              border: InputBorder.none,
-              hintText: label,
-              hintStyle: kHintTextStyle,              
-            )
-          ),
+          child: _buildTextField(),
         )
       ],
+    );
+  }
+
+  TextField _buildTextField() {
+
+    const kHintTextStyle = TextStyle( 
+      fontFamily: 'OpenSans',
+      fontWeight: FontWeight.w400, 
+      color: Colors.black45
+    );
+
+    return TextField(
+      controller: controller,
+      style: kHintTextStyle, 
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.only(left: 14.0),
+        border: InputBorder.none,
+        hintText: label,
+        hintStyle: kHintTextStyle,              
+      )
     );
   }
 }

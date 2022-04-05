@@ -1,3 +1,4 @@
+import 'package:calc/models/financeType.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
 
@@ -6,7 +7,13 @@ import 'package:calc/shared/button.dart';
 import 'package:calc/shared/colors.dart';
 
 class ExpensesForm extends StatefulWidget {
-  const ExpensesForm({ Key? key }) : super(key: key);
+
+  const ExpensesForm({ 
+    Key? key,
+    required this.financeType 
+  }) : super(key: key);
+
+  final FinanceType financeType; 
 
   @override
   State<ExpensesForm> createState() => _ExpensesFormState();
@@ -64,7 +71,7 @@ class _ExpensesFormState extends State<ExpensesForm> {
           children:  [
             const SizedBox(height: 8),
             ExpensesFormField(
-              title: "Expense Title", 
+              title: "Expense Title ${widget.financeType.toString()}", 
               label: "Write the title of the expense", 
               controller: _expenseTitleField
             ),

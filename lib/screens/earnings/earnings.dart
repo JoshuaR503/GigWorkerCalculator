@@ -1,5 +1,6 @@
 
 import 'package:calc/models/financeSummary.model.dart';
+import 'package:calc/models/financeType.dart';
 import 'package:calc/screens/dashboard/styles.dart';
 import 'package:calc/shared/financesSummaryCard.dart';
 import 'package:calc/screens/earnings/earningsChart.dart';
@@ -50,26 +51,26 @@ class _EarningsState extends State<Earnings> {
 
           // const BarChartSample2(),
 
-          _buildDashboardAddExpensesCard(title: "Add weekly earnings", description: "Earnings this week", icon: FontAwesomeIcons.moneyBill1Wave),
+          _buildDashboardAddExpensesCard(financeType: FinanceType.earnings, title: "Add weekly earnings", description: "Earnings this week", icon: FontAwesomeIcons.moneyBill1Wave),
           const SizedBox(height: 14),
 
-          _buildDashboardAddExpensesCard(title: "Add hours worked", description: "Amount of hours worked", icon: FontAwesomeIcons.clock),
+          _buildDashboardAddExpensesCard(financeType: FinanceType.hoursWorked, title: "Add hours worked", description: "Amount of hours worked", icon: FontAwesomeIcons.clock),
           const SizedBox(height: 14),
 
-          _buildDashboardAddExpensesCard(title: "Add miles driven", description: "Amount of hours worked", icon: FontAwesomeIcons.car),
+          _buildDashboardAddExpensesCard(financeType: FinanceType.milesDriven, title: "Add miles driven", description: "Amount of hours worked", icon: FontAwesomeIcons.car),
           const SizedBox(height: 28),
 
 
           _buildPortfolioSubtitle(title: 'Add expenses', subtitle: 'See breakdown', route: '/expensesBreakdown'),
           const SizedBox(height: 14),
 
-          _buildDashboardAddExpensesCard(title: "Add gas expense", description: "Add cost of gas", icon: FontAwesomeIcons.droplet),
+          _buildDashboardAddExpensesCard(financeType: FinanceType.gasExpense, title: "Add gas expense", description: "Add cost of gas", icon: FontAwesomeIcons.droplet),
           const SizedBox(height: 14),
 
-          _buildDashboardAddExpensesCard(title: "Add an expense", description: "Add a custom expense", icon: FontAwesomeIcons.receipt),
+          _buildDashboardAddExpensesCard(financeType: FinanceType.customExpense, title: "Add an expense", description: "Add a custom expense", icon: FontAwesomeIcons.receipt),
           const SizedBox(height: 14),
 
-          _buildDashboardAddExpensesCard(title: "Add maintenance expense", description: "Add cost of maintenance", icon: FontAwesomeIcons.wrench),
+          _buildDashboardAddExpensesCard(financeType: FinanceType.maintenanceExpense, title: "Add maintenance expense", description: "Add cost of maintenance", icon: FontAwesomeIcons.wrench),
           const SizedBox(height: 14),
         ],
       ),
@@ -94,11 +95,13 @@ class _EarningsState extends State<Earnings> {
   }
 
   Widget _buildDashboardAddExpensesCard({
+    required FinanceType financeType,
     required String title,
     required String description, 
     required IconData icon
   }) {
     return ExpensesCard(
+      financeType: financeType,
       title: title,
       description: description,
       icon: icon

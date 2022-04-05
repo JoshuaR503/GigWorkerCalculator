@@ -1,5 +1,4 @@
 import 'package:calc/screens/earnings/earningsHistory.dart';
-import 'package:calc/screens/expenses/expensesForm.dart';
 import 'package:calc/screens/expenses/expensesBreakdown.dart';
 import 'package:calc/screens/home.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +19,6 @@ class MyApp extends StatelessWidget {
       // home: const HomeScreen(),
       routes: {
         '/': (context) => const HomeScreen(),
-        '/expensesForm': (context) => const ExpensesForm(),
         '/expensesBreakdown': (context) => const ExpensesBreakdown(),
         '/earningsHistory': (context) => const EarningsHistory(),
       },
