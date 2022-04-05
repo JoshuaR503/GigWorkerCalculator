@@ -1,5 +1,5 @@
-import 'package:calc/screens/dashboard/helpers.dart';
-import 'package:calc/screens/dashboard/styles.dart';
+import 'package:calc/screens/expenses/widgets/helpers.dart';
+import 'package:calc/shared/styles.dart';
 import 'package:calc/screens/earnings/earningsChart.dart';
 import 'package:calc/screens/earnings/earningsHistoryCard.dart';
 import 'package:calc/shared/card.dart';

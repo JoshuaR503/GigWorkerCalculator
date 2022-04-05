@@ -1,5 +1,5 @@
 import 'package:calc/models/financeSummary.model.dart';
-import 'package:calc/screens/dashboard/helpers.dart';
+import 'package:calc/screens/expenses/widgets/helpers.dart';
 import 'package:calc/shared/card.dart';
 import 'package:calc/shared/colors.dart';
 import 'package:calc/shared/financesSummaryCard.dart';

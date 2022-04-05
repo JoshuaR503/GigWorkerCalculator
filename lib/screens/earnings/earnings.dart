@@ -1,7 +1,7 @@
 
 import 'package:calc/models/financeSummary.model.dart';
 import 'package:calc/models/financeType.dart';
-import 'package:calc/screens/dashboard/styles.dart';
+import 'package:calc/shared/styles.dart';
 import 'package:calc/shared/financesSummaryCard.dart';
 import 'package:calc/screens/earnings/earningsChart.dart';
 import 'package:calc/screens/earnings/earningsHistoryCard.dart';

@@ -1,5 +1,5 @@
 import 'package:calc/models/financeType.dart';
-import 'package:calc/screens/dashboard/styles.dart';
+import 'package:calc/shared/styles.dart';
 import 'package:calc/screens/expenses/expensesForm.dart';
 import 'package:calc/shared/colors.dart';
 import 'package:flutter/material.dart';

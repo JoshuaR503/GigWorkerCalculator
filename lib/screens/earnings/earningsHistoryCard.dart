@@ -1,5 +1,5 @@
 
-import 'package:calc/screens/dashboard/styles.dart';
+import 'package:calc/shared/styles.dart';
 import 'package:flutter/material.dart';
 
 class EarningsHistoryCard extends StatelessWidget {

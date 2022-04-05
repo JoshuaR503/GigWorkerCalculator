@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:calc/screens/dashboard/styles.dart';
+import 'package:calc/shared/styles.dart';
 import 'package:calc/shared/decorations.dart';
 
 class ExpensesFormField extends StatelessWidget {

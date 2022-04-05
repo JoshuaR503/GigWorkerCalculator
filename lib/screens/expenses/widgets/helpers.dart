@@ -1,4 +1,4 @@
-import 'package:calc/screens/dashboard/styles.dart';
+import 'package:calc/shared/styles.dart';
 import 'package:calc/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

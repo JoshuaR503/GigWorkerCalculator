@@ -1,4 +1,3 @@
-import 'package:calc/screens/dashboard/dashboard.dart';
 import 'package:calc/screens/earnings/earnings.dart';
 import 'package:calc/screens/expenses/expensesForm.dart';
 import 'package:calc/screens/stats/stats.dart';

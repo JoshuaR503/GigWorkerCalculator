@@ -1,6 +1,6 @@
 
 import 'package:calc/models/financeSummary.model.dart';
-import 'package:calc/screens/dashboard/styles.dart';
+import 'package:calc/shared/styles.dart';
 import 'package:calc/screens/stats/statsCard.dart';
 import 'package:calc/shared/card.dart';
 import 'package:calc/shared/financesSummaryCard.dart';
