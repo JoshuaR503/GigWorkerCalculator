@@ -1,25 +1,45 @@
-import 'package:calc/screens/dashboard/styles.dart';
-import 'package:calc/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
 
-const kBoxDecorationStyle = BoxDecoration(
-  color: Color(0xffe9ebf3),
-  borderRadius: BorderRadius.all(Radius.circular(4)),
-);
+import 'package:calc/screens/expenses/expensesFormField.dart';
+import 'package:calc/shared/button.dart';
+import 'package:calc/shared/colors.dart';
 
-class ExpensesForm extends StatelessWidget {
+class ExpensesForm extends StatefulWidget {
   const ExpensesForm({ Key? key }) : super(key: key);
 
   @override
+  State<ExpensesForm> createState() => _ExpensesFormState();
+}
+
+class _ExpensesFormState extends State<ExpensesForm> {
+
+  final TextEditingController _expenseTitleField = TextEditingController();
+  final TextEditingController _expenseCostField = TextEditingController();
+  final TextEditingController _expenseDescriptionField = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is removed from the widget tree.
+    _expenseTitleField.dispose();
+    _expenseCostField.dispose();
+    _expenseDescriptionField.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    
+    final AppBar appBar = AppBar(
+      title: const Text("New Expense"),
+      backgroundColor: kCoralRed, 
+      bottomOpacity: 0.0, 
+      elevation: 0.0
+    );
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("New Expense"),
-        backgroundColor: kCoralRed, 
-        bottomOpacity: 0.0, 
-        elevation: 0.0
-      ),
+      appBar: appBar,
       body: SafeArea(
         child: SizedBox(
           height: double.infinity,
@@ -39,76 +59,39 @@ class ExpensesForm extends StatelessWidget {
 
   Widget _buildForm() {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        
         Column(
-          children: [
-            _buildFormField(title: "Expense Title", label: "Write the title of the expense"),
+          children:  [
             const SizedBox(height: 8),
-            _buildFormField(title: "Expense Cost", label: "Write the cost of the expense"),
+            ExpensesFormField(
+              title: "Expense Title", 
+              label: "Write the title of the expense", 
+              controller: _expenseTitleField
+            ),
+
             const SizedBox(height: 8),
-            _buildFormField(title: "Expense Description", label: "Add a brief description"),
+            ExpensesFormField(
+              title: "Expense Cost", 
+              label: "Write the cost of the expense", 
+              controller: _expenseCostField
+            ),
+
+            const SizedBox(height: 8),
+            ExpensesFormField(
+              title: "Expense Description", 
+              label: "Add a brief description", 
+              controller: _expenseDescriptionField
+            ),
           ],
         ),
         const SizedBox(height: 24),
-        _buildLoginBtn()
+        
+        UniversalButton(callback: formCallback)
       ],
     );
   }
 
-  Widget _buildFormField({
-    required String title, 
-    required String label
-  }) {
-
-    const kHintTextStyle = TextStyle( 
-      fontFamily: 'OpenSans',
-      fontWeight: FontWeight.w400, 
-      color: Colors.black45
-    );
-
-    final InputDecoration kFormDecoration = InputDecoration(
-      contentPadding: const EdgeInsets.only(left: 14.0),
-      border: InputBorder.none,
-      hintText: label,
-      hintStyle: kHintTextStyle,              
-    );
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(height: 8),
-        Text(title, style: breakdownSectionTitle),
-
-        const SizedBox(height: 16),
-
-        Container(
-          alignment: Alignment.centerLeft,
-          decoration: kBoxDecorationStyle,
-          child: TextField(style: kHintTextStyle, decoration: kFormDecoration),
-          height: 54.0,
-        )
-      ],
-    );
-  }
-
-  Widget _buildLoginBtn() {
-    return Container(
-      decoration: kBoxDecorationStyle,
-      height: 54,
-      width: double.infinity,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          elevation: 0,
-          primary: kCoralRed,
-          padding: const EdgeInsets.all(8),
-        ),
-
-        onPressed: () {},
-        child: const Text('Save', style: TextStyle(fontSize: 17.5),
-        ),
-      ),
-    );
-  }
+  void formCallback() {}
+  
 }
+
