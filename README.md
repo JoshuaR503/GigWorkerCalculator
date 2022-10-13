@@ -1,16 +1,8 @@
-# calc
+# GigWorker - Mobile
+This a simple UI for an app that will help gig workers calculate their earnings when working for Doordash. This is currently a draft. A UI idea. 
+![Stock Market App](/img.png)
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Coming soon
+- Database and authentication
+- Actual methods to calculate earnings
+- Support for multi app and differnt platforms (such as Instacart).
